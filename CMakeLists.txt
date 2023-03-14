@@ -10,14 +10,13 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 list(APPEND CMAKE_IGNORE_PATH "${PROJECT_BINARY_DIR}")
 list(APPEND CMAKE_MODULE_PATH
-	"${PROJECT_SOURCE_DIR}/tools/SKSE-CMakeModules/Modules"
+	"${PROJECT_SOURCE_DIR}/tools/Modules"
 	"${PROJECT_SOURCE_DIR}/tools/BethesdaCMakeModules/Modules"
 )
 
 include(SKSEPlugin)
 include(Papyrus)
 
-set(SKSE_SUPPORT_VR ON)
 set(SKSE_USE_XBYAK ON)
 
 SKSEPlugin_Add(
@@ -48,36 +47,3 @@ target_link_libraries(
 		tsl::ordered_map
 		jsoncpp_static
 )
-
-set(PAPYRUS_IMPORTS
-	"${PROJECT_SOURCE_DIR}/scripts"
-	"$ENV{UIExtensionsPath}/scripts/source"
-	"$ENV{MCMPath}/Source/Scripts"
-	"$ENV{SKSE64Path}/Scripts/Source"
-)
-
-Papyrus_Add(
-	"DynamicArmorSDK"
-	GAME ${SkyrimSE_PATH}
-	IMPORTS ${PAPYRUS_IMPORTS}
-	SOURCES
-		"${PROJECT_SOURCE_DIR}/scripts/DynamicArmor.psc"
-	OPTIMIZE
-	ANONYMIZE
-	COMPONENT Data
-)
-
-Papyrus_Add(
-	"DynamicArmorMenu"
-	GAME ${SkyrimSE_PATH}
-	IMPORTS ${PAPYRUS_IMPORTS}
-	SOURCES
-		"${PROJECT_SOURCE_DIR}/scripts/DynamicArmor_MCM.psc"
-		"${PROJECT_SOURCE_DIR}/scripts/DynamicArmor_Menu.psc"
-		"${PROJECT_SOURCE_DIR}/scripts/DynamicArmor_MenuPower.psc"
-	OPTIMIZE
-	ANONYMIZE
-	COMPONENT UIExtensions_Menu
-)
-
-include(install_files.cmake)
