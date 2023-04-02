@@ -10,12 +10,10 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 list(APPEND CMAKE_IGNORE_PATH "${PROJECT_BINARY_DIR}")
 list(APPEND CMAKE_MODULE_PATH
-	"${PROJECT_SOURCE_DIR}/tools/Modules"
-	"${PROJECT_SOURCE_DIR}/tools/BethesdaCMakeModules/Modules"
+	"${PROJECT_SOURCE_DIR}/tools/Modules"	
 )
 
 include(SKSEPlugin)
-include(Papyrus)
 
 set(SKSE_USE_XBYAK ON)
 

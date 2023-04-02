@@ -24,8 +24,8 @@ dynamically at runtime.
 
 ## Building
 ```
-git clone https://github.com/Exit-9B/DynamicArmorVariants
-cd DynamicArmorVariants
+git clone https://github.com/Fuzzlesz/DynamicArmorVariants-SE
+cd DynamicArmorVariants-SE
 git submodule init
 git submodule update
 cmake --preset vs2022-windows

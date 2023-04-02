@@ -22,13 +22,16 @@ auto WornFormUpdater::ProcessEvent(
 	[[maybe_unused]] RE::BSTEventSource<RE::TESActorLocationChangeEvent>* a_eventSource)
 	-> RE::BSEventNotifyControl
 {
-	auto& actor = a_event->actor;
-	if (actor && actor->Is3DLoaded()) {
-		Ext::Actor::Update3DSafe(actor);
+	auto actor = a_event->actor.get();  // Get the raw pointer from the NiPointer
+	auto actorAsREActor = static_cast<RE::Actor*>(actor);  // Cast the pointer to RE::Actor*
+
+	if (actorAsREActor && actorAsREActor->Is3DLoaded()) {
+		Ext::Actor::Update3DSafe(actorAsREActor);
 	}
 
 	return RE::BSEventNotifyControl::kContinue;
 }
+
 
 auto WornFormUpdater::ProcessEvent(
 	const RE::TESCombatEvent* a_event,

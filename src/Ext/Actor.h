@@ -1,4 +1,5 @@
 #pragma once
+#include <RE/Offsets.h>
 
 namespace Ext
 {
