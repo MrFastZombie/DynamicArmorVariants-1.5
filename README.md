@@ -26,7 +26,7 @@ dynamically at runtime.
 
 ## Building
 ```
-git clone https://github.com/Fuzzlesz/DynamicArmorVariants-1.5
+git clone https://github.com/MrFastZombie/DynamicArmorVariants-1.5
 cd DynamicArmorVariants-1.5
 git submodule init
 git submodule update
