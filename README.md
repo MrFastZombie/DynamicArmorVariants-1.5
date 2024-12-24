@@ -1,3 +1,5 @@
+# I don't know if this works yet, so don't try building this unless you want to experiment. I am mainly just seeing if I can get this to work for myself.
+
 Framework for mods to define variants of armors by swapping armor addons
 dynamically at runtime.
 
